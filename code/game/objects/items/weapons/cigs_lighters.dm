@@ -478,6 +478,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			attack_verb = list("burnt", "singed")
 			if(!istype(src, /obj/item/weapon/lighter/greyscale))
 				user.visible_message("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.", "<span class='notice'>Without even breaking stride, you flip open and lights [src] in one smooth movement.</span>")
+				playsound(src.loc, 'sound/items/ZippoLight.ogg', 25, 1)
 			else
 				var/prot = FALSE
 				var/mob/living/carbon/human/H = user
@@ -506,6 +507,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			attack_verb = null //human_defense.dm takes care of it
 			if(!istype(src, /obj/item/weapon/lighter/greyscale))
 				user.visible_message("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.", "<span class='notice'>You quietly shut off [src] without even looking at what you're doing. Wow.</span>")
+				playsound(src.loc, 'sound/items/ZippoClose.ogg', 25, 1)
 			else
 				user.visible_message("[user] quietly shuts off [src].", "<span class='notice'>You quietly shut off [src].")
 			user.AddLuminosity(-1)
